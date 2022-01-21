@@ -1,0 +1,3 @@
+C:\Users\Carl\source\repos\raycaster_cpp\Debug\raycaster_cpp.vcxproj.CopyComplete
+C:\Users\Carl\source\repos\raycaster_cpp\Debug\raycaster_cpp.exe
+C:\Users\Carl\source\repos\raycaster_cpp\Debug\raylib.dll
