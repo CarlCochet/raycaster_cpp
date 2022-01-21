@@ -7,8 +7,8 @@
 class Obstacle
 {
 private:
-	Vector2 position;
-	Vector2 size;
+	Vector2 m_position;
+	Vector2 m_size;
 
 public:
 	Obstacle();

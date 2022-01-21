@@ -7,10 +7,10 @@
 class Ray
 {
 private:
-	Vector2 start;
-	Vector2 end;
-	Vector2 direction;
-	float length;
+	Vector2 m_start;
+	Vector2 m_end;
+	Vector2 m_direction;
+	float m_length;
 
 public:
 	Ray();

@@ -9,9 +9,9 @@
 class Game
 {
 private:
-	Player player;
-	std::vector<Obstacle> obstacles;
-	std::vector<Ray> rays;
+	Player m_player;
+	std::vector<Obstacle> m_obstacles;
+	std::vector<Ray> m_rays;
 
 public:
 	Game();

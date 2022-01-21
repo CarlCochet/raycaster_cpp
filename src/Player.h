@@ -6,8 +6,8 @@
 class Player
 {
 private:
-	Vector2 position;
-	Vector2 forward;
+	Vector2 m_position;
+	Vector2 m_forward;
 
 public:
 	Player();
