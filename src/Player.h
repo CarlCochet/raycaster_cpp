@@ -25,7 +25,7 @@ public:
 	Vector2 get_position() const;
 
 	void render() const;
-	void move(Direction direction);
+	void move(Direction direction, float delta);
 	void generate_raycasts(const int ray_count, const int fov, const float max_length);
 	void update_raycasts(const std::vector<Line>& lines);
 

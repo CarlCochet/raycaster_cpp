@@ -19,6 +19,7 @@ void RayCast::update(const Vector2 player_pos, const Vector2 player_dir)
 
 void RayCast::compute_collision(const std::vector<Line>& lines)
 {
+	// Algorithm adapted from https://stackoverflow.com/questions/563198/how-do-you-detect-where-two-line-segments-intersect
 	for (const Line& line : lines)
 	{
 		const Vector2 s1{ line.b.x - line.a.x, line.b.y - line.a.y };

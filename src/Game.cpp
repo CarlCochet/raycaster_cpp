@@ -12,22 +12,22 @@ void Game::process_inputs(float delta)
 	// Player movements
 	if (IsKeyDown(KEY_W))
 	{
-		player_.move(Direction::forward);
+		player_.move(Direction::forward, delta);
 		player_.update_raycasts(world_.get_lines(player_.get_position(), vision_range_));
 	}
 	if (IsKeyDown(KEY_S))
 	{
-		player_.move(Direction::backward);
+		player_.move(Direction::backward, delta);
 		player_.update_raycasts(world_.get_lines(player_.get_position(), vision_range_));
 	}
 	if (IsKeyDown(KEY_A))
 	{
-		player_.move(Direction::left);
+		player_.move(Direction::left, delta);
 		player_.update_raycasts(world_.get_lines(player_.get_position(), vision_range_));
 	}
 	if (IsKeyDown(KEY_D))
 	{
-		player_.move(Direction::right);
+		player_.move(Direction::right, delta);
 		player_.update_raycasts(world_.get_lines(player_.get_position(), vision_range_));
 	}
 
