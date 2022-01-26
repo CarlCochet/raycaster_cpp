@@ -4,7 +4,7 @@ Player::Player(const Vector2 position, const Vector2 forward):
 	position_{ position }, forward_{ forward }, raycasts_{}
 {
 	// Make sure all memory is available for performance reasons
-	raycasts_.reserve(1600);
+	raycasts_.reserve(WINDOW_WIDTH);
 }
 
 Vector2 Player::get_position() const
@@ -21,6 +21,16 @@ void Player::render() const
 
 	DrawLineV(position_, Vector2Add(position_, Vector2Scale(forward_, 100.0f)), GREEN);
 	DrawCircleV(position_, 10.0f, YELLOW);
+}
+
+void Player::render_3d() const
+{
+	const int ray_count{ static_cast<int>(raycasts_.size()) };
+
+	for (unsigned i {0} ; i < ray_count; ++i)
+	{
+		raycasts_[i].render_3d(ray_count, i);
+	}
 }
 
 void Player::move(const Direction direction, float delta)

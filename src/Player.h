@@ -13,7 +13,7 @@
 class Player
 {
 private:
-	Vector2 position_{ 800.0f, 450.0f };
+	Vector2 position_{ static_cast<float>(WINDOW_WIDTH) / 4.0f, static_cast<float>(WINDOW_HEIGHT) / 2.0f };
 	Vector2 forward_{ 1.0f, 0.0f };
 	std::vector<RayCast> raycasts_{};
 
@@ -25,6 +25,7 @@ public:
 	Vector2 get_position() const;
 
 	void render() const;
+	void render_3d() const;
 	void move(Direction direction, float delta);
 	void generate_raycasts(const int ray_count, const int fov, const float max_length);
 	void update_raycasts(const std::vector<Line>& lines);

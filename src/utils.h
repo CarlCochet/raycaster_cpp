@@ -2,6 +2,9 @@
 
 #include "raylib.h"
 
+constexpr int WINDOW_HEIGHT = 900;
+constexpr int WINDOW_WIDTH = 1600;
+
 enum class Direction {
 	forward,
 	backward,

@@ -14,7 +14,7 @@ private:
 	std::vector<int> grid_{};
 	std::vector<Line> lines_{};
 	std::vector<Line> nearby_lines_{};
-	Vector2 world_size_{ 1600, 900 };
+	Vector2 world_size_{ static_cast<float>(WINDOW_WIDTH) / 2.0f, WINDOW_HEIGHT };
 	int cell_size_{ 50 };
 	int width_{ static_cast<int>(world_size_.x) / cell_size_ };
 	int height_{ static_cast<int>(world_size_.y) / cell_size_ };

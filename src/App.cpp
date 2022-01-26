@@ -2,7 +2,7 @@
 
 App::App()
 {
-	InitWindow(window_width_, window_height_, "Raycaster");
+	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Raycaster");
 	SetTargetFPS(144);
 }
 
@@ -20,7 +20,8 @@ void App::run()
 		BeginDrawing();
 		ClearBackground(BLACK);
 
-		game_.render();
+		game_.render_debug();
+		game_.render_3d();
 
 		DrawFPS(static_cast<int>(fps_pos_.x), static_cast<int>(fps_pos_.y));
 		EndDrawing();
