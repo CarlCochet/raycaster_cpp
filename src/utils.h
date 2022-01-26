@@ -2,12 +2,14 @@
 
 #include "raylib.h"
 
-enum Direction {
-	Forward,
-	Backward
+enum class Direction {
+	forward,
+	backward,
+	left,
+	right
 };
 
 struct Line {
-	Vector2 A;
-	Vector2 B;
+	Vector2 a;
+	Vector2 b;
 };

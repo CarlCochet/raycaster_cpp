@@ -1,5 +1,6 @@
 ﻿  App.cpp
   Game.cpp
+  World.cpp
   main.cpp
   Generating Code...
   raycaster_cpp.vcxproj -> C:\Users\Carl\source\repos\raycaster_cpp\Debug\raycaster_cpp.exe

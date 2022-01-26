@@ -2,21 +2,25 @@
 
 #include "raylib.h"
 
+#include "Game.h"
+
 class App
 {
 private:
-	const int m_window_width{ 1600 };
-	const int m_window_height{ 900 };
+	const int window_width_{ 1600 };
+	const int window_height_{ 900 };
 
-	const Vector2 m_fps_pos{
-		static_cast<float>(m_window_width * 94 / 100),
-		static_cast<float>(m_window_height / 100)
+	const Vector2 fps_pos_{
+		static_cast<float>(window_width_) * 94.0f / 100.0f,
+		static_cast<float>(window_height_) / 100.0f
 	};
+
+	Game game_{};
 
 public:
 	App();
 	~App();
 
-	void Run();
+	void run();
 };
 

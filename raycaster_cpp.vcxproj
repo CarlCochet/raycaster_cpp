@@ -142,18 +142,18 @@
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Obstacle.cpp" />
     <ClCompile Include="src\Player.cpp" />
-    <ClCompile Include="src\Ray.cpp" />
+    <ClCompile Include="src\RayCast.cpp" />
     <ClCompile Include="src\utils.cpp" />
+    <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App.h" />
     <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\Obstacle.h" />
     <ClInclude Include="src\Player.h" />
-    <ClInclude Include="src\Ray.h" />
+    <ClInclude Include="src\RayCast.h" />
     <ClInclude Include="src\utils.h" />
+    <ClInclude Include="src\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
