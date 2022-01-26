@@ -14,14 +14,15 @@ private:
 	World world_{};
 
 	// Game options
-	float vision_range_{ 1000.0f };
-	int fov_{ 360 };
+	float vision_range_{ 2000.0f };
+	int fov_{ 90 };
 	int ray_count_{ 1600 };
 
 public:
 	Game();
 	~Game() = default;
-	void process_inputs();
+
+	void process_inputs(float delta);
 	void render() const;
 };
 

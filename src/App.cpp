@@ -15,7 +15,7 @@ void App::run()
 {
 	while (!WindowShouldClose())
 	{
-		game_.process_inputs();
+		game_.process_inputs(GetFrameTime());
 
 		BeginDrawing();
 		ClearBackground(BLACK);

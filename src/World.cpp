@@ -3,9 +3,11 @@
 World::World(const Vector2 world_size, const int cell_size):
 	world_size_{ world_size }, cell_size_{ cell_size }
 {
+	// Not in init list to prevent incorrect init order
 	width_ = { static_cast<int>(world_size_.x) / cell_size_ };
 	height_ = { static_cast<int>(world_size_.y) / cell_size_ };
 
+	// Make sure all memory is available for performance reasons
 	grid_.reserve(width_* height_);
 	lines_.reserve(width_* height_ * 4);
 	nearby_lines_.reserve(width_* height_ * 4);
@@ -24,6 +26,7 @@ void World::generate_random()
 	{
 		for (int x {0} ; x < width_ ; ++x)
 		{
+			// Make the borders filled with obstacles
 			if (x == 0 || x == width_-1 || y == 0 || y == height_-1)
 			{
 				grid_.emplace_back(1);
@@ -33,6 +36,7 @@ void World::generate_random()
 			{
 				const int value{ static_cast<int>(dist(rng)) };
 
+				// Otherwise only place obstacles where there are 1s
 				if (value == 0) {
 					grid_.emplace_back(1);
 					generate_lines(x, y);
@@ -48,17 +52,11 @@ void World::generate_random()
 
 void World::render() const
 {
-	const int size{ static_cast<int>(grid_.size()) };
+	// This is really only used as debug so no need to be fancy
 
-	for (int i {0} ; i < size ; ++i)
+	for (const Line& line : lines_)
 	{
-		const int x { i % width_ };
-		const int y { i / height_ };
-
-		if (grid_[i] == 1)
-		{
-			DrawRectangle(x, y, cell_size_, cell_size_, WHITE);
-		}
+		DrawLineV(line.a, line.b, BLUE);
 	}
 }
 

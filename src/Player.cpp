@@ -12,14 +12,13 @@ Vector2 Player::get_position() const
 
 void Player::render() const
 {
-	DrawCircleV(position_, 10.0f, YELLOW);
-
 	for (const RayCast& raycast : raycasts_)
 	{
 		raycast.render();
 	}
 
-	DrawLineV(position_, Vector2Add(position_, Vector2Scale(forward_, 100.0f)), GREEN); 
+	DrawLineV(position_, Vector2Add(position_, Vector2Scale(forward_, 100.0f)), GREEN);
+	DrawCircleV(position_, 10.0f, YELLOW);
 }
 
 void Player::move(const Direction direction)
@@ -44,8 +43,10 @@ void Player::generate_raycasts(const int ray_count, const int fov, const float m
 {
 	const float rad_fov = static_cast<float>(fov) * 3.14159265358979323846f / 180.0f;
 	const float angle_step = rad_fov / static_cast<float>(ray_count);
+	const int half_count{ ray_count / 2 };
+	raycasts_.clear();
 
-	for (int i{0} ; i < ray_count ; ++i)
+	for (int i{-half_count} ; i < half_count; ++i)
 	{
 		raycasts_.emplace_back(RayCast{
 			position_,

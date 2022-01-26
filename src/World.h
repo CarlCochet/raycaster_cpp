@@ -23,6 +23,7 @@ public:
 	World() = default;
 	World(Vector2 world_size, int cell_size);
 	~World() = default;
+
 	void generate_random();
 	void render() const;
 	std::vector<Line> get_lines(const Vector2 position, const float range);
