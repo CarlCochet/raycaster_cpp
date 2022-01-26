@@ -20,6 +20,9 @@ void App::run()
 		BeginDrawing();
 		ClearBackground(BLACK);
 
+		DrawRectangle(WINDOW_WIDTH / 2, 0, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, BLUE);
+		DrawRectangle(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2, BROWN);
+
 		game_.render_debug();
 		game_.render_3d();
 
